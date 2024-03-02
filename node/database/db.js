@@ -5,13 +5,17 @@
 //     dialect:'mysql'
 // })
 
-import mongoose from 'mongoose'
-const url ='mongodb://127.0.0.1:27017/mern'
-mongoose.connect(url)
+import mongoose from "mongoose";
+const url = "mongodb+srv://alejandro902019:123@cluster0.lklkehb.mongodb.net/mern?retryWrites=true&w=majority&appName=Cluster0";
 
+mongoose.connect(url);
 
-const db = mongoose.connection
-db.on('open', ()=>{ console.log("¡Conectado a MongoDB!")} )
-db.on('error', ()=>{ console.log("¡Error al conectar a MongoDB!")} )
+const db = mongoose.connection;
+db.on("open", () => {
+  console.log("¡Conectado a MongoDB!");
+});
+db.on("error", () => {
+  console.log("¡Error al conectar a MongoDB!");
+});
 
-export default db
+export default db;
